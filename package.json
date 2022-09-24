@@ -1,4 +1,25 @@
 {
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "Challenge Team Profile Generator",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marianellag1/Team-Profile-Generator.git"
+  },
+  "author": "Marianella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marianellag1/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/Marianellag1/Team-Profile-Generator#readme",
   "dependencies": {
     "inquirer": "^8.2.4"
   },

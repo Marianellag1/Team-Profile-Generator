@@ -5,27 +5,27 @@ inquirer
     {
         type: 'input',
         name: 'manager',
-        message: 'What is the Team Managers name?',
+        message: `What is the Team Manager's name?`,
     },
     {
         type: 'input',
         name: 'id',
-        message: 'What is the employee ID?',
+        message: `What is the Team Manager's employee ID?`,
     },
     {
         type: 'input',
         name: 'email',
-        message: 'What is the email address?',
+        message: `What is the Team Manager's email?`,
     },
     {
         type: 'input',
         name: 'office',
-        message: 'What is the office number?',
+        message: `What is the Team Manager's office number?`,
     },
     {
         type: 'list',
         name: 'menu',
-        message: 'Please choose',
+        message: `Which type of team member would you like to add?`,
         choices: ['Engineer', 'Intern', 'Finish building my team']
     },
 ])
