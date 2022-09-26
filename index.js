@@ -93,7 +93,7 @@ const addEngineer = () => {
 
         ]).then(ans => {
             console.log(ans);
-            const Engineer = new Engineer (ans.name, ans.id, ans.email, ans.office, ans.github);
+            const Engineer = new Engineer(ans.name, ans.id, ans.email, ans.office, ans.github);
             teamArray.push(Engineer);
             employeeMenu();
         });
@@ -150,7 +150,3 @@ addManager();
 
 //  function addEngineer()
 //  function addIntern()
-
-// inquirer
-// .prompt([
-// ])
