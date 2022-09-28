@@ -1,5 +1,5 @@
 
-const inputManager = function (manager) {
+const inputManager = function (manager) {//manager can be displayed, only problem is office is showing up as undefined, will have to ask
     return `
                      <div class="col-4 mt-4">
                          <div class="card container" style="width: 18rem;">
@@ -17,7 +17,7 @@ const inputManager = function (manager) {
                      `
 };
 
-const inputEngineer = function (engineer) {
+const inputEngineer = function (engineer) {//engineer is the only one that can have multiple and not display error, all good on this one
     return `
                      <div class="col-4 mt-4">
                          <div class="card container" style="width: 18rem;">
@@ -35,7 +35,8 @@ const inputEngineer = function (engineer) {
                  `
 }
 
-const inputIntern = function (intern) {
+const inputIntern = function (intern) {//intern has an error that wont allow it to show on browser, will have to ask
+    //i read the error but, looked it up, but maybe im just not putting two and two, or maybe its late and im just not noticing the error.
 
     return ` 
                      <div class="col-4 mt-4">
@@ -56,11 +57,11 @@ const inputIntern = function (intern) {
 template = (ans) => {
 
     teamArray = [];
-    
+
     for (let i = 0; i < ans.length; i++) {
         const employee = ans[i];
         const role = employee.getRole();
-        
+
         if (role === "Manager") {
             const managerEmployee = inputManager(employee);
 
