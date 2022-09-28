@@ -1,8 +1,9 @@
+const fs = require('fs');
+const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const inquirer = require('inquirer');
-const fs = require('fs');
+const template = require('./src/template');
 
 
 
@@ -31,17 +32,11 @@ const addManager = () => {
                 name: 'office',
                 message: `What is the Team Manager's office number?`,
             },
-        ]).then(ans => {
-            console.log(ans);
-            const manager = new Manager(ans.name, ans.id, ans.email, ans.office);
-            teamArray.push(manager);
-            employeeMenu();
-        });
-}
-
+        ])
+};
 
 const employeeMenu = () => {
-    return inquirer
+     inquirer
         .prompt([
             {
                 type: 'list',
@@ -64,10 +59,10 @@ const employeeMenu = () => {
                     break;
             }
         })
-}
+};
 
 const addEngineer = () => {
-    return inquirer
+     inquirer
         .prompt([
 
             {
@@ -93,14 +88,14 @@ const addEngineer = () => {
 
         ]).then(ans => {
             console.log(ans);
-            const Engineer = new Engineer(ans.name, ans.id, ans.email, ans.office, ans.github);
-            teamArray.push(Engineer);
+            const engineer = new Engineer(ans.name, ans.id, ans.email, ans.github);
+            teamArray.push(engineer);
             employeeMenu();
         });
 };
 
 const addIntern = () => {
-    return inquirer
+     inquirer
         .prompt([
 
             {
@@ -126,27 +121,22 @@ const addIntern = () => {
 
         ]).then(ans => {
             console.log(ans);
-            const Intern = new Intern(ans.name, ans.id, ans.email, ans.office, ans.school);
+            const intern = new Intern(ans.name, ans.id, ans.email, ans.office, ans.school);
             teamArray.push(Intern);
             employeeMenu();
         });
 };
 
-const createTeam = () => {
-    console.log(`   
-============
-TEAM CREATED
-============`);
-    if (!fs.existsSync(OUTPUT_DIR)) {
-        fs.mkdirSync(OUTPUT_DIR);
-    } else {
-
-        fs.writeFileSync(outputPath, genTeam(teamArray), "UTF-8");
-
-    };
+function createTeam() {
+    fs.writeFile('./dist/index.html', template(teamArray), 'utf-8');
 }
 
-addManager();
-
+addManager()
+.then(ans => {
+    console.log(ans);
+    const manager = new Manager(ans.name, ans.id, ans.email, ans.office);
+    teamArray.push(manager);
+    employeeMenu();
+});
 //  function addEngineer()
 //  function addIntern()
