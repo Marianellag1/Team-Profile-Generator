@@ -10,7 +10,7 @@ const template = require('./src/template');
 const teamArray = [];
 
 const addManager = () => {
-    return inquirer
+    inquirer
         .prompt([
             {
                 type: 'input',
@@ -33,10 +33,16 @@ const addManager = () => {
                 message: `What is the Team Manager's office number?`,
             },
         ])
+        .then(ans => {
+            console.log(ans);
+            const manager = new Manager(ans.name, ans.id, ans.email, ans.office);
+            teamArray.push(manager);
+            employeeMenu();
+        });
 };
 
 const employeeMenu = () => {
-     inquirer
+    inquirer
         .prompt([
             {
                 type: 'list',
@@ -62,7 +68,7 @@ const employeeMenu = () => {
 };
 
 const addEngineer = () => {
-     inquirer
+    inquirer
         .prompt([
 
             {
@@ -95,7 +101,7 @@ const addEngineer = () => {
 };
 
 const addIntern = () => {
-     inquirer
+    inquirer
         .prompt([
 
             {
@@ -127,16 +133,12 @@ const addIntern = () => {
         });
 };
 
-function createTeam() {
-    fs.writeFile('./dist/index.html', template(teamArray), 'utf-8');
-}
 
 addManager()
-.then(ans => {
-    console.log(ans);
-    const manager = new Manager(ans.name, ans.id, ans.email, ans.office);
-    teamArray.push(manager);
-    employeeMenu();
-});
-//  function addEngineer()
-//  function addIntern()
+
+function createTeam() {
+    fs.writeFile('teamgenerator.html', template(teamArray), function (err) {
+        if (err) {
+            return console.log(err)
+        }
+    })};
