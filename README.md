@@ -1,6 +1,6 @@
 # **Team Profile Generator**
 
-MIT[![Licence](http://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Licence](http://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
@@ -19,6 +19,7 @@ MIT[![Licence](http://img.shields.io/badge/License-MIT-yellow.svg)](https://open
 
 ## **Description of the Project**
 A command-line that accepts users input. Users will be given a series of questions for a team profile. User will first answer team managers questions , and when satisfied, will be given options to add Engineer, Intern , or to finish building the team. The manager prompt will only show once, but user can choose up to four spots for engineer  or intern, or like mentioned can end the team. Once user inputs information, an html will be generated and the user will be taken to that generated html. User will then be able to click on options such as email, and github for user interaction.
+![Screenshot 2022-09-27 230855](https://user-images.githubusercontent.com/110939445/192685729-a8d5a583-7bb8-4055-b47a-0dc3e357bc21.png)
 
 
 
